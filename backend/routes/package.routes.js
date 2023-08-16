@@ -34,7 +34,8 @@ packageRoute.get('/:region', async (req, res) => {
 packageRoute.get('/details/:_id', async (req, res) => {
     try {
         const {_id} = req.params;
-        // console.log(_id);
+        Number(_id);
+        console.log(_id);
         const package = await Packagemodel.findOne({_id : _id});
 
         if (!package) {
